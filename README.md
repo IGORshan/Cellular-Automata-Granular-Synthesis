@@ -1,7 +1,5 @@
 # Cellular-Automata-Granular-Synthesis
-A generative music system combining Cellular Automata and granular synthesis, implemented in C# and MaxMSP. This project explores algorithmic sound generation, mapping grid-based automata states to audio synthesis (granular synth), providing a good user interface for creating experimental and evolving sonic textures.
-
-Here's a sample structure and content for your **README.md** file that provides a clear overview of your project:
+A generative music system combining Cellular Automata and granular synthesis, implemented in C# and MaxMSP. This project explores algorithmic sound generation, mapping grid-based automata states to audio synthesis (granular synth), providing the user interface for creating experimental and evolving sonic textures.
 
 ## System Requirements
 - macOS (required)
