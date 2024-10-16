@@ -1,0 +1,62 @@
+[
+  {
+    "Name": "Conway's Game of Life",
+    "A": 23,
+    "B": 3
+  },
+  {
+    "Name": "High Life",
+    "A": 34,
+    "B": 3
+  },
+  {
+    "Name": "Anneal",
+    "A": 1358,
+    "B": 357
+  },
+  {
+    "Name": "Life without Death",
+    "A": 12345,
+    "B": 3
+  },
+  {
+    "Name": "2x2",
+    "A": 34,
+    "B": 34
+  },
+  {
+    "Name": "Diamoeba",
+    "A": 4567,
+    "B": 345
+  },
+  {
+    "Name": "Replicator",
+    "A": 123456780,
+    "B": 3
+  },
+  {
+    "Name": "Dry Life",
+    "A": 1357,
+    "B": 1357
+  },
+  {
+    "Name": "Stains",
+    "A": 245,
+    "B": 368
+  },
+  {
+    "Name": "Mazectric",
+    "A": 123470,
+    "B": 36
+  },
+  {
+    "Name": "Maze",
+    "A": 1357,
+    "B": 246
+  },
+  {
+    "Name": "Coagulations",
+    "A": 34678,
+    "B": 3678
+  }
+]

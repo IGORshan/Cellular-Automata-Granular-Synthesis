@@ -1,0 +1,244 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:views="using:CellularAutomataUI.Views"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:CellularAutomataUI.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="CellularAutomataUI.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="CellularAutomataUI"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        Width="1024" Height="680">
+        
+
+        <StackPanel>
+                <DockPanel>
+                
+                <NumericUpDown  Name="NewGridSize"  Value="8" Minimum="8" Maximum="128" Increment="1">
+                        <ToolTip.Tip>
+                                <StackPanel>
+                                        <TextBlock Classes="h1">Set Grid Size </TextBlock>
+                                        <TextBlock Classes="h2">(Recommended Range: 8 to 20 ) </TextBlock>
+                                        <TextBlock Classes="h3">(Please wait a second after entering a new large number. Additionally, anywhere close or over 30 will crash the Max patch. ) </TextBlock>
+                                </StackPanel>
+                        </ToolTip.Tip>
+                </NumericUpDown>
+                
+                <NumericUpDown Name="NewIterationSpeed" Value="750" Minimum="300" Maximum="3000" Increment="50">
+                        <ToolTip.Tip>
+                                <StackPanel>
+                                        <TextBlock Classes="h1">Set Iteration Speed in Milliseconds</TextBlock>
+                                </StackPanel>
+                        </ToolTip.Tip>
+                </NumericUpDown>
+                        
+                <NumericUpDown Name="GrainDurLo" Value="1200" Minimum="0" Maximum="3190" Increment="50">
+                        <ToolTip.Tip>
+                                <StackPanel>
+                                        <TextBlock Classes="h1">Set the lower boundary of duration of a single grain</TextBlock>
+                                        <TextBlock Classes="h2">Program will generate random value between the interval as the duration of grain.</TextBlock>
+                                        <TextBlock Classes="h3">(Minimum: 0, Maxmimum: 3190)</TextBlock>
+                                        <TextBlock Classes="h4">Please make sure upper value is bigger than lower.</TextBlock>
+                                </StackPanel>
+                        </ToolTip.Tip>
+                </NumericUpDown>
+                        
+                <NumericUpDown Name="GrainDurHi" Value="1500" Minimum="10" Maximum="3199" Increment="50">
+                        <ToolTip.Tip>
+                                <StackPanel>
+                                        <TextBlock Classes="h1">Set the upper boundary of duration of a single grain</TextBlock>
+                                        <TextBlock Classes="h2">Program will generate random value between the interval as the duration of grain.</TextBlock>
+                                        <TextBlock Classes="h3">(Minimum: 10, Maxmimum: 3199.)</TextBlock>
+                                        <TextBlock Classes="h4">Please make sure upper value is bigger than lower.</TextBlock>
+                                </StackPanel>
+                        </ToolTip.Tip>
+                </NumericUpDown>
+                        
+                <ComboBox SelectedIndex="{Binding RuleIndex, Mode=TwoWay}" MaxDropDownHeight="100">
+                        <ComboBoxItem>Rule 1
+                                <ToolTip.Tip>
+                                        <StackPanel>
+                                                <TextBlock Classes="h1">23/3: Conway's Game of Life</TextBlock>
+                                        </StackPanel>
+                                </ToolTip.Tip>
+                        </ComboBoxItem>
+                        
+                        <ComboBoxItem>Rule 2
+                                <ToolTip.Tip>
+                                        <StackPanel>
+                                                <TextBlock Classes="h1">34/3: High Life</TextBlock>
+                                        </StackPanel>
+                                </ToolTip.Tip>
+                        </ComboBoxItem>
+                        
+                        <ComboBoxItem>Rule 3
+                                <ToolTip.Tip>
+                                        <StackPanel>
+                                                <TextBlock Classes="h1">1358/357: Anneal</TextBlock>
+                                        </StackPanel>
+                                </ToolTip.Tip>
+                        </ComboBoxItem>
+                        
+                        <ComboBoxItem>Rule 4
+                                <ToolTip.Tip>
+                                        <StackPanel>
+                                                <TextBlock Classes="h1">12345/3: Life without Death</TextBlock>
+                                        </StackPanel>
+                                </ToolTip.Tip>
+                        </ComboBoxItem>
+                        
+                        <ComboBoxItem>Rule 5
+                                <ToolTip.Tip>
+                                        <StackPanel>
+                                                <TextBlock Classes="h1">34/34: 2x2</TextBlock>
+                                        </StackPanel>
+                                </ToolTip.Tip>
+                        </ComboBoxItem>
+                        
+                        <ComboBoxItem>Rule 6
+                                <ToolTip.Tip>
+                                        <StackPanel>
+                                                <TextBlock Classes="h1">4567/345: Diamoeba</TextBlock>
+                                        </StackPanel>
+                                </ToolTip.Tip>
+                        </ComboBoxItem>
+                        
+                        <ComboBoxItem>Rule 7
+                                <ToolTip.Tip>
+                                        <StackPanel>
+                                                <TextBlock Classes="h1">012345678/3: Replicator</TextBlock>
+                                        </StackPanel>
+                                </ToolTip.Tip>
+                        </ComboBoxItem>
+                        
+                        <ComboBoxItem>Rule 8
+                                <ToolTip.Tip>
+                                        <StackPanel>
+                                                <TextBlock Classes="h1">1357/1357: Dry Life</TextBlock>
+                                        </StackPanel>
+                                </ToolTip.Tip>
+                        </ComboBoxItem>
+                        
+                        <ComboBoxItem>Rule 9
+                                <ToolTip.Tip>
+                                        <StackPanel>
+                                                <TextBlock Classes="h1">245/368: Stains</TextBlock>
+                                        </StackPanel>
+                                </ToolTip.Tip>
+                        </ComboBoxItem>
+                        
+                        <ComboBoxItem>Rule 10
+                                <ToolTip.Tip>
+                                        <StackPanel>
+                                                <TextBlock Classes="h1">123470/36: Mazectric</TextBlock>
+                                        </StackPanel>
+                                </ToolTip.Tip>
+                        </ComboBoxItem>
+                        
+                        <ComboBoxItem>Rule 11
+                                <ToolTip.Tip>
+                                        <StackPanel>
+                                                <TextBlock Classes="h1">1357/246: Maze</TextBlock>
+                                        </StackPanel>
+                                </ToolTip.Tip>
+                        </ComboBoxItem>
+                        
+                        <ComboBoxItem>Rule 12
+                                <ToolTip.Tip>
+                                        <StackPanel>
+                                                <TextBlock Classes="h1">34678/3678: Coagulations</TextBlock>
+                                        </StackPanel>
+                                </ToolTip.Tip>
+                        </ComboBoxItem>
+                        
+                        <ToolTip.Tip>
+                                <StackPanel>
+                                        <TextBlock Classes="h1">Select the legacy rule of current Cellular Automaton</TextBlock>
+                                        <TextBlock Classes="h2">First number before the slash stands for the neighbors required for the cell to continue.</TextBlock>
+                                        <TextBlock Classes="h3">Second Number after the slash stands for the neighbors required for the birth of cell.</TextBlock>
+                                </StackPanel>
+                        </ToolTip.Tip>
+                </ComboBox>
+                        
+                <NumericUpDown Name="RuleSetA" Value="{Binding A, Mode=TwoWay}" Minimum="0" Maximum="123456789" Increment="1">
+                        <ToolTip.Tip>
+                                <StackPanel>
+                                        <TextBlock Classes="h1">Set the number for a cell to continue current state.</TextBlock>
+                                </StackPanel>
+                        </ToolTip.Tip>
+                </NumericUpDown>
+                        
+                <NumericUpDown Name="RuleSetB" Value="{Binding B, Mode=TwoWay}" Minimum="0" Maximum="123456789" Increment="1">
+                        <ToolTip.Tip>
+                                <StackPanel>
+                                        <TextBlock Classes="h1">Set the number for a cell to be borned.</TextBlock>
+                                </StackPanel>
+                        </ToolTip.Tip>
+                </NumericUpDown>
+                
+                <Button Click="ConfirmAllParamChanges" Margin="5,0,0,0" HorizontalAlignment="Right">
+                        <PathIcon Data="{StaticResource checkbox_checked_regular}" />
+                        
+                        <ToolTip.Tip>
+                                <StackPanel>
+                                        <TextBlock Classes="h1">Confirm all the changes and reset the iteration</TextBlock>
+                                </StackPanel>
+                        </ToolTip.Tip>
+                </Button>
+                
+                </DockPanel>
+                
+                <Grid>
+                       
+                <ExperimentalAcrylicBorder IsHitTestVisible="False">
+                        <ExperimentalAcrylicBorder.Material>
+                                <ExperimentalAcrylicMaterial
+                                        BackgroundSource="Digger"
+                                        TintColor="Gray"
+                                        TintOpacity="1"
+                                        MaterialOpacity="0.65" />
+                        </ExperimentalAcrylicBorder.Material>
+                </ExperimentalAcrylicBorder>
+                
+                <Button HorizontalAlignment="Right" VerticalAlignment="Top"  
+                        Click="StartIterationCa">
+                        <PathIcon Data="{StaticResource power_regular}" />
+                        <ToolTip.Tip>
+                                <StackPanel>
+                                        <TextBlock Classes="h1">Start Iteration</TextBlock>
+                                </StackPanel>
+                        </ToolTip.Tip>
+                </Button>
+                
+                <Button HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="0,30,0,0"
+                        Click="PauseIterationCa">
+                        <PathIcon Data="{StaticResource pause_regular}" />
+                        <ToolTip.Tip>
+                                <StackPanel>
+                                        <TextBlock Classes="h1">Pause Iteration</TextBlock>
+                                </StackPanel>
+                        </ToolTip.Tip>
+                </Button>
+                
+                <Button HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="0,60,0,0"
+                        Click="GenerateRandomCells">
+                        <PathIcon Data="{StaticResource tap_double_regular}" />
+                        <ToolTip.Tip>
+                                <StackPanel>
+                                        <TextBlock Classes="h1">Generate Random Cells for Initialising</TextBlock>
+                                </StackPanel>
+                        </ToolTip.Tip>
+                </Button>
+                        
+                
+                <Canvas  Background="AliceBlue" Margin="20" Name="AutomatonCanvas" Width="{Binding CanvasWidth}" Height="{Binding CanvasHeight}"/>
+                
+        </Grid>
+        </StackPanel>
+        
+
+
+</Window>

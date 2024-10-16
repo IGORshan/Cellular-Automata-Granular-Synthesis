@@ -1,0 +1,38 @@
+# Ignore .NET build directories
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.app
+*.dylib
+
+# Ignore User-specific files
+.vscode/
+.idea/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.sln.ide
+*.dbmdl
+*.cache/
+
+# Ignore macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Ignore Avalonia-specific cache and build
+.avalonia/
+avalonia-build/
+avalonia-cache/
+*.axaml.g.cs
+
+# Ignore logs
+*.log
